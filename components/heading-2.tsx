@@ -5,7 +5,7 @@ interface HeadingTwoProps {
 
 export const HeadingTwo = ({ level, children }: HeadingTwoProps) => {
   if (level === 3) {
-    return <h3 className="text-base font-bold">{children}</h3>
+    return <h3 className="text-base font-serif font-bold leading-snug">{children}</h3>
   }
-  return <h2 className="text-base font-bold">{children}</h2>
+  return <h2 className="text-base font-serif font-bold leading-snug">{children}</h2>
 }

@@ -1,12 +1,14 @@
 import type { Metadata } from 'next'
-import { Source_Sans_3 } from 'next/font/google'
+import { Source_Serif_4 } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/navbar'
 
-const sans = Source_Sans_3({
-  variable: '--font-sans',
+const serif = Source_Serif_4({
+  variable: '--font-serif',
   subsets: ['latin'],
+  // weight: ['200', '300', '400'],
   weight: ['200', '400', '700'],
+  style: ['italic', 'normal'],
 })
 
 export const metadata: Metadata = {
@@ -22,13 +24,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${sans.variable} antialiased font-sans text-base text-gray-900 bg-white border-8 border-solid border-gray-200`}
+        className={`${serif.variable} antialiased font-serif text-base text-gray-700 bg-white border-8 border-solid border-gray-200`}
       >
         <a className="skip-link" href="#main">
           Skip to content
         </a>
         <div className="flex flex-col min-h-screen flex-none">
-          <div className="container mx-auto gutter flex flex-row flex-wrap justify-between items-center pt-2 mb-6 sm:mb-12 md:mb-24">
+          <div className="container mx-auto px-3 flex flex-row flex-wrap justify-between items-center pt-2 mb-6 sm:mb-12 md:mb-24">
             <Navbar />
           </div>
 
@@ -36,36 +38,12 @@ export default function RootLayout({
             {children}
           </main>
 
-          <footer className="flex-none container gutter pb-12" id="contact">
-            <div className="gutter w-full flex-none mb-3">
+          <footer className="flex-none container mx-auto px-3" id="contact">
+            <div className="px-3 w-full flex-none mb-3">
               <hr className="w-full h-0 block border-t border-solid border-red-600 py-0 m-0" />
             </div>
             <div className="flex flex-row flex-wrap justify-end">
-              <div className="gutter w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
-                <h3 className="heading-2">email</h3>
-                <div className="generated">
-                  <a href="mailto:info@cuboctaedro.eu">info@cuboctaedro.eu</a>
-                </div>
-              </div>
-              <div className="gutter w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
-                <h3 className="heading-2">Phone</h3>
-                <div className="generated">
-                  <a href="tel:+306932001313">+30 6932 00 1313</a>
-                </div>
-              </div>
-              <div className="gutter w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
-                <h3 className="heading-2">Post Address</h3>
-                <div className="generated">
-                  Dimitris Kottas
-                  <br />
-                  Lomvardou 23-25
-                  <br />
-                  11473, Athens
-                  <br />
-                  Greece
-                </div>
-              </div>
-              <div className="gutter w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
+              <div className="px-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
                 <div className="generated">© 2025 Dimitris Kottas</div>
               </div>
             </div>

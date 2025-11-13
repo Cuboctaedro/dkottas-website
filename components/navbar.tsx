@@ -15,71 +15,78 @@ export const Navbar = () => {
   return (
     <>
       {section === 'home' && (
-        <h1 className="gutter">
-          <span className="font-titles font-bold text-2xl">Dimitris Kottas</span>
+        <h1 className="px-3">
+          <span className="font-titles font-bold font-serif text-2xl">Dimitris Kottas</span>
         </h1>
       )}
       {section !== 'home' && (
-        <span className="gutter">
-          <Link className="font-titles font-bold text-2xl" href="/">
+        <span className="px-3">
+          <Link
+            className="font-titles font-bold font-serif text-2xl hover:text-red-700 transition-colors"
+            href="/"
+          >
             Dimitris Kottas
           </Link>
         </span>
       )}
-      <nav aria-label="Main Menu" className="gutter relative">
+      <nav aria-label="Main Menu" className="px-3">
         <button
-          className="h-6 block md:hidden"
+          className="h-6 block md:hidden relative z-20"
           aria-expanded={isOpen}
           aria-controls="main-menu"
           title="Menu Toggle"
           onClick={() => setIsOpen(!isOpen)}
         >
           <BurgerIcon />
-          <span className="visually-hidden">Menu</span>
+          <span className="sr-only">Menu</span>
         </button>
         <ul
-          className={`absolute md:static md:flex right-0 bg-gray-100 md:bg-transparent shadow-2xl md:shadow-none md:flex-row mt-3 md:mt-0 mr-4 md:mr-0 lowercase text-center md:text-left ${
-            isOpen === true ? 'flex' : 'hidden'
+          className={`fixed z-10 md:static flex-col md:flex-row inset-0 bg-gray-100 md:bg-transparent pt-16 md:pt-0 font-serif text-center md:text-left ${
+            isOpen === true ? 'flex' : 'hidden md:flex'
           }`}
           id="main-menu"
           role="menu"
         >
           <li className="md:pl-6 hover:bg-gray-200 md:hover:bg-transparent" role="menuitem">
             <Link
-              className={`px-12 py-4 inline-block md:px-0 md:py-0 ${
-                section === 'work' ? 'text-black' : ''
+              className={`px-12 py-4 inline-block md:px-0 md:py-0 hover:text-red-700 transition-colors ${
+                section === 'work' ? 'text-black' : 'text-gray-700'
               }`}
               href="/work"
+              onClick={() => setIsOpen(false)}
             >
               work
             </Link>
           </li>
           <li className="md:pl-6 hover:bg-gray-200 md:hover:bg-transparent" role="menuitem">
             <Link
-              className={`px-12 py-4 inline-block md:px-0 md:py-0 ${
-                section === 'about' ? 'text-black' : ''
+              className={`px-12 py-4 inline-block md:px-0 md:py-0 hover:text-red-700 transition-colors ${
+                section === 'about' ? 'text-black' : 'text-gray-700'
               }`}
               href="/about"
+              onClick={() => setIsOpen(false)}
             >
               about
             </Link>
           </li>
           <li className="md:pl-6 hover:bg-gray-200 md:hover:bg-transparent" role="menuitem">
             <Link
-              className={`px-12 py-4 inline-block md:px-0 md:py-0 ${
-                section === 'blog' ? 'text-black' : ''
+              className={`px-12 py-4 inline-block md:px-0 md:py-0 hover:text-red-700 transition-colors ${
+                section === 'blog' ? 'text-black' : 'text-gray-700'
               }`}
               href="/blog"
+              onClick={() => setIsOpen(false)}
             >
               blog
             </Link>
           </li>
           <li className="md:pl-6 hover:bg-gray-200 md:hover:bg-transparent" role="menuitem">
             <Link
-              className={`px-12 py-4 inline-block md:px-0 md:py-0 ${
-                section === 'contact' ? 'text-black' : ''
+              className={`px-12 py-4 inline-block md:px-0 md:py-0 hover:text-red-700 transition-colors ${
+                section === 'contact' ? 'text-black' : 'text-gray-700'
               }`}
               href="/contact"
+              onClick={() => setIsOpen(false)}
             >
               contact
             </Link>

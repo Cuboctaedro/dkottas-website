@@ -11,33 +11,40 @@ interface PrevNextProps {
 
 export const PrevNext = ({ prev, next, type }: PrevNextProps) => {
   return (
-    <nav className="gutter w-full">
-      <ul className="flex flex-row justify-end  lowercase">
+    <nav className="px-3 w-full">
+      <ul className="flex flex-row justify-end text-gray-400 gap-2">
+        {next !== null && (
+          <li className="">
+            <Link
+              href={type === 'project' ? `/work/${next}` : `/blog/${next}`}
+              className="hover:text-gray-800 transition-colors"
+            >
+              <ArrowLeftIcon />
+              <span className="sr-only">{`More recent ${
+                type === 'post' ? 'posts' : 'projects'
+              }`}</span>
+            </Link>
+          </li>
+        )}
+        <li className="">
+          <Link
+            href={type === 'project' ? '/work' : '/blog'}
+            className="hover:text-gray-800 transition-colors"
+          >
+            <ArrowUpIcon />
+            <span className="sr-only">{`Go to ${
+              type === 'project' ? 'Projects page' : 'Blog'
+            }`}</span>
+          </Link>
+        </li>
         {prev !== null && (
           <li className="">
             <Link
               href={type === 'project' ? `/work/${prev}` : `/blog/${prev}`}
-              title="Go to previous"
+              className="hover:text-gray-800 transition-colors"
             >
-              <ArrowLeftIcon />
-              <span>Previous</span>
-            </Link>
-          </li>
-        )}
-        <li className="pl-6">
-          <Link
-            href={type === 'project' ? '/work' : '/blog'}
-            title={`Go to ${type === 'project' ? 'Work page' : 'Blog'}`}
-          >
-            <ArrowUpIcon />
-            <span>{`${type === 'project' ? 'Work' : 'Blog'}`}</span>
-          </Link>
-        </li>
-        {next !== null && (
-          <li className="">
-            <Link href={type === 'project' ? `/work/${next}` : `/blog/${next}`} title="Go to next">
               <ArrowRightIcon />
-              <span>Next</span>
+              <span className="sr-only">{`Older ${type === 'post' ? 'posts' : 'projects'}`}</span>
             </Link>
           </li>
         )}

@@ -4,6 +4,7 @@ import { getPrevNextProject } from '@/lib/get-prev-next-project'
 import { Project } from '@/types/project'
 import Link from 'next/link'
 import Image from 'next/image'
+import { HeadingOne } from '@/components/heading-1'
 
 const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
@@ -14,29 +15,30 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
     <article className="container mx-auto px-3">
       <PrevNext prev={prev} next={next} type="project" />
       <header className="px-3 w-full mb-12">
-        <h1 className="heading-1">{project.title}</h1>
+        <HeadingOne level={1}>{project.title}</HeadingOne>
       </header>
 
       <div className="flex flex-row flex-wrap w-full">
         <div className="w-full xl:w-1/4 lg:flex xl:block mb-12">
-          <div className="gutter lg:w-1/3 xl:w-full">
-            <ul className="mb-8 font-serif">
+          <div className="px-3 lg:w-1/3 xl:w-full">
+            <ul className="mb-8 ">
               <li>
-                <span className="italic">Description: </span>
+                <span className="font-bold inline-block pr-1">Description: </span>
                 <span>{project.description}</span>
               </li>
               <li>
-                <span className="italic">Date: </span>
+                <span className="font-bold inline-block pr-1">Date: </span>
                 <time dateTime={project.date}>{project.date}</time>
               </li>
               <li>
-                <span className="italic">Tags: </span>
+                <span className="font-bold inline-block pr-1">Tags: </span>
                 <ul className="inline">
-                  {project.tags.map((tag) => (
+                  {project.tags.map((tag, index) => (
                     <li className="inline tag" key={tag}>
                       <Link href="<?= $page->parent()->url() ?>/tag/<?= Str::kebab($tag) ?>">
                         {tag}
                       </Link>
+                      {index < project.tags.length - 1 && <>{`, `}</>}
                     </li>
                   ))}
                 </ul>
@@ -56,7 +58,7 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
             )}
           </div>
 
-          <div className="px-3 lg:w-2/3 xl:w-full generated">
+          <div className="px-3 lg:w-2/3 xl:w-full font-serif">
             <div dangerouslySetInnerHTML={{ __html: project.content }} />
           </div>
         </div>
@@ -66,17 +68,15 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
             {project.gallery.map(async (image) => {
               const file = await import(`../../../public/work/${image.file}`)
               return (
-                <li key={image.file}>
-                  <div className="mb-12">
+                <li key={image.file} className="mb-12">
+                  <div>
                     <Image
                       alt={`${project.title}: ${image.caption}`}
                       src={file}
                       sizes="(max-width: 479px) 415px, (max-width: 767px) 432px, (max-width: 1023px) 720px, (max-width: 960px) 960px, (min-width: 1280px) 904px"
                     />
+                    <div className="pt-3">{image.caption}</div>
                   </div>
-                  <figure className="mb-12">
-                    <figcaption className="w-full text-gray-600 text-sm italic"></figcaption>
-                  </figure>
                 </li>
               )
             })}

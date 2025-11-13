@@ -12,15 +12,20 @@ export const TagsMenu = () => {
   return (
     <nav className="tagcloud">
       <ul>
-        <li>
-          <Link className={tagSlug === 'work' ? 'text-black' : ''} href="<?= $projects->url() ?>">
+        <li className="pb-1">
+          <Link
+            className={`hover:text-red-700 transition-colors ${tagSlug === 'work' ? 'italic' : ''}`}
+            href="<?= $projects->url() ?>"
+          >
             All projects
           </Link>
         </li>
         {tags.map((tag) => (
-          <li key={tag.slug}>
+          <li key={tag.slug} className="pb-1">
             <Link
-              className={tagSlug === tag.slug ? 'text-black' : ''}
+              className={`hover:text-red-700 transition-colors ${
+                tagSlug === 'work' ? '' : 'italic'
+              }`}
               href={`/work/tags/${tag.slug}`}
             >
               {tag.label}

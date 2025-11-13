@@ -35,7 +35,7 @@ export const Services = ({ isServicePage }: ServicesProps) => {
             <li className="pl-3 pr-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4" key={item.title}>
               <div className="mb-12">
                 <HeadingTwo level={isServicePage ? 2 : 3}>{item.title}</HeadingTwo>
-                <div className="generated mt-6">{item.content}</div>
+                <div className="font-serif text-base leading-snug mt-6">{item.content}</div>
               </div>
             </li>
           ))}
