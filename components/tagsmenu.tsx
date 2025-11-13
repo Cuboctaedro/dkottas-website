@@ -7,14 +7,16 @@ import { usePathname } from 'next/navigation'
 export const TagsMenu = () => {
   const pathname = usePathname()
 
-  const tagSlug = pathname.split('/').length > 2 ? pathname.split('/')[2] : 'work'
+  const tagSlug = pathname.split('/').length > 2 ? pathname.split('/')[3] : 'work'
 
   return (
     <nav className="tagcloud">
       <ul>
         <li className="pb-1">
           <Link
-            className={`hover:text-red-700 transition-colors ${tagSlug === 'work' ? 'italic' : ''}`}
+            className={`hover:text-red-700 transition-colors ${
+              tagSlug === 'work' ? 'font-bold' : ''
+            }`}
             href="<?= $projects->url() ?>"
           >
             All projects
@@ -24,9 +26,9 @@ export const TagsMenu = () => {
           <li key={tag.slug} className="pb-1">
             <Link
               className={`hover:text-red-700 transition-colors ${
-                tagSlug === 'work' ? '' : 'italic'
+                tagSlug === tag.slug ? 'font-bold' : ''
               }`}
-              href={`/work/tags/${tag.slug}`}
+              href={`/work/tag/${tag.slug}`}
             >
               {tag.label}
             </Link>

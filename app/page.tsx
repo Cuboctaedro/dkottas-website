@@ -1,6 +1,7 @@
 import { Projects } from '@/components/projects'
 import { Services } from '@/components/services'
 import { getAllProjects } from '@/lib/data'
+import { Metadata } from 'next'
 
 const Home = async () => {
   const allProjects = getAllProjects()
@@ -24,3 +25,25 @@ const Home = async () => {
 }
 
 export default Home
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const allProjects = getAllProjects()
+  const image = allProjects[0].featuredimage
+  return {
+    title: 'Dimitris Kottas - Developer and Designer',
+    description: 'Protfolio of design and web development projects by Dimitris Kottas.',
+    openGraph: {
+      title: 'Dimitris Kottas - Developer and Designer',
+      description: 'Protfolio of design and web development projects by Dimitris Kottas.',
+      url: 'https://www.cuboctaedro.eu',
+      siteName: 'Dimitris Kottas',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: `https://www.cuboctaedro.eu/work/${image}` }],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
+}

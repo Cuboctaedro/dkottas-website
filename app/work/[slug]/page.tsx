@@ -5,6 +5,7 @@ import { Project } from '@/types/project'
 import Link from 'next/link'
 import Image from 'next/image'
 import { HeadingOne } from '@/components/heading-1'
+import { Metadata } from 'next'
 
 const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
@@ -88,3 +89,30 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
 }
 
 export default SinglePropjectPage
+
+export const generateMetadata = async ({
+  params,
+}: {
+  params: Promise<{ slug: string }>
+}): Promise<Metadata> => {
+  const { slug } = await params
+  const project = getItemBySlug(slug, 'project') as Project
+
+  return {
+    title: `${project.title} | Dimitris Kottas - Developer and Designer`,
+    description: project.description,
+    openGraph: {
+      title: `${project.title} | Dimitris Kottas - Developer and Designer`,
+      description: project.description,
+      url: `https://www.cuboctaedro.eu/work/${project.slug}`,
+      siteName: 'Dimitris Kottas',
+      locale: 'en_US',
+      type: 'website',
+      images: [{ url: `https://www.cuboctaedro.eu/work/${project.featuredimage}` }],
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+  }
+}
