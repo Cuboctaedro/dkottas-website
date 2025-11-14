@@ -4,8 +4,8 @@ export const tags = [
     slug: 'web-design',
   },
   {
-    label: 'Development',
-    slug: 'development',
+    label: 'Web Development',
+    slug: 'web-development',
   },
   {
     label: 'Print Design',
@@ -18,5 +18,9 @@ export const tags = [
   {
     label: 'Exhibitions',
     slug: 'exhibitions',
+  },
+  {
+    label: 'Identity',
+    slug: 'identity',
   },
 ]

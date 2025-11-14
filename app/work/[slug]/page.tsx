@@ -6,11 +6,16 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { HeadingOne } from '@/components/heading-1'
 import { Metadata } from 'next'
+import { markdownToHtml } from '@/lib/markdown'
+import { tags } from '@/lib/tags'
+import { ProjectGallery } from '@/components/project-gallery'
 
 const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
   const project = getItemBySlug(slug, 'project') as Project
   const { prev, next } = getPrevNextProject(slug)
+
+  const content = await markdownToHtml(project.content)
 
   return (
     <article className="container mx-auto px-3">
@@ -34,14 +39,20 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
               <li>
                 <span className="font-bold inline-block pr-1">Tags: </span>
                 <ul className="inline">
-                  {project.tags.map((tag, index) => (
-                    <li className="inline tag" key={tag}>
-                      <Link href="<?= $page->parent()->url() ?>/tag/<?= Str::kebab($tag) ?>">
-                        {tag}
-                      </Link>
-                      {index < project.tags.length - 1 && <>{`, `}</>}
-                    </li>
-                  ))}
+                  {project.tags.map((tag, index) => {
+                    const tagSlug = tags.find((t) => t.label === tag)?.slug as string
+                    return (
+                      <li className="inline tag" key={tag}>
+                        <Link
+                          href={`/work/tag/${tagSlug}`}
+                          className="hover:text-red-700 transition-colors"
+                        >
+                          {tag}
+                        </Link>
+                        {index < project.tags.length - 1 && <>{`, `}</>}
+                      </li>
+                    )
+                  })}
                 </ul>
               </li>
             </ul>
@@ -59,29 +70,13 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
             )}
           </div>
 
-          <div className="px-3 lg:w-2/3 xl:w-full font-serif">
-            <div dangerouslySetInnerHTML={{ __html: project.content }} />
+          <div className="px-3 lg:w-2/3 xl:w-full font-serif generated">
+            <div dangerouslySetInnerHTML={{ __html: content }} />
           </div>
         </div>
 
         <div className="px-3 w-full xl:w-3/4">
-          <ul>
-            {project.gallery.map(async (image) => {
-              const file = await import(`../../../public/work/${image.file}`)
-              return (
-                <li key={image.file} className="mb-12">
-                  <div>
-                    <Image
-                      alt={`${project.title}: ${image.caption}`}
-                      src={file}
-                      sizes="(max-width: 479px) 415px, (max-width: 767px) 432px, (max-width: 1023px) 720px, (max-width: 960px) 960px, (min-width: 1280px) 904px"
-                    />
-                    <div className="pt-3">{image.caption}</div>
-                  </div>
-                </li>
-              )
-            })}
-          </ul>
+          <ProjectGallery gallery={project.gallery} title={project.title} />
         </div>
       </div>
     </article>
