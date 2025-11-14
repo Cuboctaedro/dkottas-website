@@ -48,7 +48,7 @@ export const getSortedProjectSlugs = () => {
 export const getAllPosts = async (): Promise<Array<PostInList>> => {
   const postSlugs = getBlogSlugs()
   const allPosts = postSlugs.map((slug) => getItemBySlug(slug, 'post')) as Array<Post>
-  allPosts.sort((a, b) => new Date(a.date).valueOf() - new Date(b.date).valueOf())
+  allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf())
   const results = []
   for (let i = 0; i < allPosts.length; i++) {
     const post = allPosts[i]

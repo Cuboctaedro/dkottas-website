@@ -16,7 +16,6 @@ export const ProjectCard = ({ project, isProjectsPage }: ProjectCardProps) => {
           src={`/work/${project.featuredimage}`}
           className="w-full block object-cover"
           alt={project.title}
-          objectFit="cover"
           fill
         />
       </Link>
