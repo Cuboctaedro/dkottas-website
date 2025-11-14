@@ -26,7 +26,7 @@ gallery:
 description: Exhibition graphics, leaflets and booklets for the Palace of Mystras.
 featuredimage: mystras-pinakides-24.jpg
 tags:
-  - Exhibition
+  - Exhibitions
   - Print Design
 ---
 

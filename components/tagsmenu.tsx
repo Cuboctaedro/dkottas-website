@@ -17,7 +17,7 @@ export const TagsMenu = () => {
             className={`hover:text-red-700 transition-colors ${
               tagSlug === 'work' ? 'font-bold' : ''
             }`}
-            href="<?= $projects->url() ?>"
+            href="/work"
           >
             All projects
           </Link>

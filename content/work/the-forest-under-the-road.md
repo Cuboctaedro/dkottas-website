@@ -13,7 +13,7 @@ description: Panels for an exhibition about the petrified forest of Lesvos.
 featuredimage: dasos-panels.jpg
 tags:
   - Print Design
-  - Exhibition
+  - Exhibitions
 ---
 
 The exhibition "The forest under the Road" at the Natural History Museum of the Lesvos Petrified Forest presents petrified trees and plants that were found during the construction of a new road on the island of Lesvos. The number of findings is huge and they still have not been completely excavated and cataloged, so the exhibition focuses not only on what has been found but also on the process of excavation and conservation and the work that will be done.

@@ -10,7 +10,7 @@ gallery:
   - file: inura-booklet.jpg
     caption: Conference booklet
 description: Posters and booklet design for an urban studies conference.
-featuredimage: vipera-home.jpg
+featuredimage: inura-posters.jpg
 tags:
   - Print Design
 ---
