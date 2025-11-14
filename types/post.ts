@@ -3,8 +3,6 @@ export type Post = {
   slug: string
   date: string
   description: string
-  featuredimage: string
-  tags: Array<string>
   content: string
 }
 

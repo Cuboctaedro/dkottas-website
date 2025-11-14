@@ -18,7 +18,7 @@ gallery:
   - file: scientific-romances-6.jpg
     caption: The Goddess of Atvatabar - book page spread
 description: A book series of 19th century science fiction.
-featuredimage: scientific-romances-1.jpg
+featuredimage: atvatabar-cover.jpg
 tags:
   - Book Design
 ---

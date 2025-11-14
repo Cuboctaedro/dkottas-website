@@ -18,7 +18,7 @@ gallery:
   - file: william-morris-6.jpg
     caption: The Wood Beyond the World - first page detail
 description: A series of fantasy novels by William Morris.
-featuredimage: william-morris-1.jpg
+featuredimage: morris-covers.jpg
 tags:
   - Book Design
 ---

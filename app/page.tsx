@@ -1,11 +1,13 @@
+import { Blog } from '@/components/blog'
 import { Projects } from '@/components/projects'
 import { Services } from '@/components/services'
-import { getAllProjects } from '@/lib/data'
+import { getAllPosts, getAllProjects } from '@/lib/data'
 import { Metadata } from 'next'
 
 const Home = async () => {
   const allProjects = getAllProjects()
   const projects = allProjects.slice(0, 12)
+  const allPosts = await getAllPosts()
 
   return (
     <>
@@ -20,6 +22,7 @@ const Home = async () => {
       </section>
       <Services isServicePage={false} />
       <Projects isProjectsPage={false} projects={projects} />
+      <Blog isBlogPage={false} posts={allPosts} />
     </>
   )
 }

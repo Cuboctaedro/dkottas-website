@@ -27,3 +27,14 @@
 .skip-link:focus {
   top: 0;
 }
+
+.generated p {
+  margin-bottom: 1.5rem;
+}
+
+.generated a {
+  @apply underline underline-offset-4 transition-colors;
+}
+.generated a:hover {
+  @apply text-red-700;
+}
