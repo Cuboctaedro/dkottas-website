@@ -27,7 +27,8 @@ export const PostItem = ({ post, isBlogPage }: PostItemProps) => {
             title={post.title}
             className="block hover:text-red-700 transition-colors uppercase text-sm"
           >
-            read more
+            <span>read more</span>
+            <span className="sr-only">{`Continue to ${post.title}`}</span>
           </Link>
         </div>
       </div>
