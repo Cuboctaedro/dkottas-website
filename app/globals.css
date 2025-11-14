@@ -38,3 +38,8 @@
 .generated a:hover {
   @apply text-red-700;
 }
+
+::selection,
+::-moz-selection {
+  @apply bg-red-200;
+}
