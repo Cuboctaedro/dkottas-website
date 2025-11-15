@@ -1,4 +1,5 @@
 import { Blog } from '@/components/blog'
+import { WebsiteSchema } from '@/components/jsonld/website'
 import { Projects } from '@/components/projects'
 import { Services } from '@/components/services'
 import { getAllPosts, getAllProjects } from '@/lib/data'
@@ -20,6 +21,7 @@ const Home = async () => {
           <div className="font-serif italic text-lg sm:text-xl">Antoine de Saint-Exupéry</div>
         </div>
       </section>
+      <WebsiteSchema />
       <Services isServicePage={false} />
       <Projects isProjectsPage={false} projects={projects} />
       <Blog isBlogPage={false} posts={allPosts} />

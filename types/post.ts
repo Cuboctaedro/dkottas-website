@@ -4,6 +4,7 @@ export type Post = {
   date: string
   description: string
   content: string
+  featuredImage: string
 }
 
 export type PostInList = Omit<Post, 'content'>

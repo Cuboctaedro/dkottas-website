@@ -9,6 +9,7 @@ import { Metadata } from 'next'
 import { markdownToHtml } from '@/lib/markdown'
 import { tags } from '@/lib/tags'
 import { ProjectGallery } from '@/components/project-gallery'
+import { ProjectSchema } from '@/components/jsonld/project'
 
 const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params
@@ -23,6 +24,8 @@ const SinglePropjectPage = async ({ params }: { params: Promise<{ slug: string }
       <header className="px-3 w-full mb-12">
         <HeadingOne level={1}>{project.title}</HeadingOne>
       </header>
+
+      <ProjectSchema project={project} />
 
       <div className="flex flex-row flex-wrap w-full">
         <div className="w-full xl:w-1/4 lg:flex xl:block mb-12">
