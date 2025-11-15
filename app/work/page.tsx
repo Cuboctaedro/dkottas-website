@@ -10,8 +10,6 @@ const WorkPage = async () => {
 export default WorkPage
 
 export const generateMetadata = async (): Promise<Metadata> => {
-  const allProjects = getAllProjects()
-  const image = allProjects[0].featuredimage
   return {
     title: 'Projects | Dimitris Kottas - Developer and Designer',
     description: 'Protfolio of design and web development projects by Dimitris Kottas.',
@@ -22,7 +20,10 @@ export const generateMetadata = async (): Promise<Metadata> => {
       siteName: 'Dimitris Kottas',
       locale: 'en_US',
       type: 'website',
-      images: [{ url: `https://www.cuboctaedro.eu/work/${image}` }],
+      images: [
+        { url: `https://www.cuboctaedro.eu/work/projects-grid-1` },
+        { url: `https://www.cuboctaedro.eu/work/projects-grid-2` },
+      ],
     },
     robots: {
       index: true,

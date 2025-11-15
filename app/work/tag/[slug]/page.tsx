@@ -22,7 +22,6 @@ export const generateMetadata = async ({
   const { slug } = await params
   const tag = tags.find((t) => t.slug === slug)?.label
   const currentProjects = projects.filter((project) => project.tags.includes(tag as string))
-  const image = currentProjects[0].featuredimage
   return {
     title: `${tag} | Dimitris Kottas - Developer and Designer`,
     description: `${tag} - Protfolio of design and web development projects by Dimitris Kottas.`,
@@ -33,7 +32,9 @@ export const generateMetadata = async ({
       siteName: 'Dimitris Kottas',
       locale: 'en_US',
       type: 'website',
-      images: [{ url: `https://www.cuboctaedro.eu/work/${image}` }],
+      images: currentProjects.map((project) => ({
+        url: `https://www.cuboctaedro.eu/work/${project.featuredimage}`,
+      })),
     },
     robots: {
       index: true,
