@@ -21,7 +21,7 @@ export const Projects = ({ isProjectsPage, projects }: ProjectsProps) => {
         </div>
         <ul className="w-full lg:w-2/3 xl:w-3/4 flex flex-row flex-wrap">
           {projects.map((project) => (
-            <li className="px-3 md:w-1/2 xl:w-1/3 mb-12" key={project.slug}>
+            <li className="px-3 w-full md:w-1/2 xl:w-1/3 mb-12" key={project.slug}>
               <ProjectCard project={project} isProjectsPage={isProjectsPage} />
             </li>
           ))}
@@ -30,3 +30,4 @@ export const Projects = ({ isProjectsPage, projects }: ProjectsProps) => {
     </section>
   )
 }
+
