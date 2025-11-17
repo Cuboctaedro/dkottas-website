@@ -2,7 +2,7 @@ import markdownit from 'markdown-it'
 import mila from 'markdown-it-link-attributes'
 import sanitizeHtml from 'sanitize-html'
 
-const md = markdownit()
+const md = markdownit({ html: true })
 
 md.use(mila, {
   matcher(href: string) {

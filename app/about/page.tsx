@@ -50,14 +50,19 @@ const AboutPage = async () => {
         </div>
         <div className="lg:w-2/3 xl:w-1/2 px-3 generated pb-12">
           <p>
-            My name is Dimitris Kottas. I work for Nelios as a senior developer and project manager.
-            I have a background in architecture and design and I have worked for many years in the
-            publishing sector before turning to web development.
+            My name is Dimitris Kottas. I am a developer and designer with a background in
+            architecture.
           </p>
           <p className="pt-3">
-            I still enjoy working on design and publishing projects when I have the time. I have
-            worked mostly with artisits, publishers, photographers, museums, galleries and
-            architects.
+            By day, I work for Nelios as project manager and senior developer. There we create web
+            apps and websites for the travel industry. We mostly use React and Node.Js. Its a
+            challenging job that offers many opportunities to learn and evolve.
+          </p>
+          <p className="pt-3">
+            By night, I work as a designer and developer for smaller, art and design related
+            projects. I enjoy working with artists, photographers and cultural institutions of all
+            kinds. Books, publishing and architecture have been ongoing interests and whenever I can
+            I enjoy taking part in projects with friends and old coleagues.
           </p>
         </div>
       </div>
