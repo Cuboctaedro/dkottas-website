@@ -10,7 +10,7 @@ interface ProjectCardProps {
 
 export const ProjectCard = ({ project, isProjectsPage }: ProjectCardProps) => {
   return (
-    <article className="relative project-card ">
+    <article className="relative project-card w-full block">
       <Link className="aspect-square relative w-full block" href={`/work/${project.slug}`}>
         <Image
           src={`/work/${project.featuredimage}`}
@@ -31,3 +31,4 @@ export const ProjectCard = ({ project, isProjectsPage }: ProjectCardProps) => {
     </article>
   )
 }
+
