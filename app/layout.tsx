@@ -1,10 +1,9 @@
-import type { Metadata } from 'next'
-import { Source_Serif_4 } from 'next/font/google'
-import './globals.css'
+import { Literata } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
+import './globals.css'
 
-const serif = Source_Serif_4({
+const serif = Literata({
   variable: '--font-serif',
   subsets: ['latin'],
   weight: ['200', '400', '700'],
