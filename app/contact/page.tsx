@@ -13,7 +13,7 @@ const ContactPage = () => {
         <div className="px-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
           <HeadingTwo level={2}>email</HeadingTwo>
           <div className="pt-6">
-            <a href="mailto:info@cuboctaedro.eu">info@cuboctaedro.eu</a>
+            <a href="mailto:cuboctaedromail@gmail.com">cuboctaedromail@gmail.com</a>
           </div>
         </div>
         <div className="px-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
@@ -62,3 +62,4 @@ export const generateMetadata = async (): Promise<Metadata> => {
     },
   }
 }
+
