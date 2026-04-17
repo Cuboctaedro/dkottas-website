@@ -16,6 +16,7 @@ gallery:
 description: An exhibition about the first governor of modern Greece.
 featuredimage: kapodistrias-poster.jpg
 tags:
+  - Graphic Design
   - Print Design
   - Exhibitions
 ---

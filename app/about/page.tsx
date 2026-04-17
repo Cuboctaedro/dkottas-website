@@ -48,7 +48,7 @@ const AboutPage = async () => {
             </a>
           </div>
         </div>
-        <div className="lg:w-2/3 xl:w-1/2 px-3 generated pb-12">
+        <div className="lg:w-2/3 xl:w-1/2 px-3 generated font-serif pb-12">
           <p>
             My name is Dimitris Kottas. I am a developer and designer with a background in
             architecture.

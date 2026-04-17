@@ -23,7 +23,7 @@ const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> })
         <HeadingOne level={1}>{post.title}</HeadingOne>
       </header>
       <ArticleSchema post={post} />
-      <div className="lg:w-2/3 xl:w-1/2 xl:mx-auto px-3 pb-12 generated">
+      <div className="lg:w-2/3 xl:w-1/2 xl:mx-auto px-3 pb-12 generated font-serif">
         <div dangerouslySetInnerHTML={{ __html: content }} />
       </div>
     </article>

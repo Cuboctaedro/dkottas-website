@@ -24,11 +24,10 @@ export const ProjectCard = ({ project, isProjectsPage }: ProjectCardProps) => {
           <HeadingTwo level={isProjectsPage ? 2 : 3}>{project.title}</HeadingTwo>
         </Link>
 
-        <div className="font-serif">
+        <div className="font-serif italic">
           <p>{project.description}</p>
         </div>
       </div>
     </article>
   )
 }
-

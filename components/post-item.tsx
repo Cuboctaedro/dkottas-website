@@ -20,12 +20,12 @@ export const PostItem = ({ post, isBlogPage }: PostItemProps) => {
         <div className="w-full lg:w-1/3 xl:w-1/4 order-1 px-3">{formatDate(post.date)}</div>
       </header>
       <div className="w-full lg:w-2/3 xl:w-3/4 order-2 px-3 ">
-        <div className="xl:w-2/3 generated">
-          {`${trimText(post.description)}... `}
+        <div className="xl:w-2/3">
+          <div className="generated font-serif pb-3">{`${trimText(post.description)}... `}</div>
           <Link
             href={`/blog/${post.slug}`}
             title={post.title}
-            className="block hover:text-red-700 transition-colors uppercase text-sm"
+            className="block hover:text-red-700 font-sans text-sm transition-colors uppercase tracking-wide"
           >
             <span>read more</span>
             <span className="sr-only">{`Continue to ${post.title}`}</span>

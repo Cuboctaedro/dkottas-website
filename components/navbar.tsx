@@ -41,7 +41,7 @@ export const Navbar = () => {
           <span className="sr-only">Menu</span>
         </button>
         <ul
-          className={`fixed z-10 md:static flex-col md:flex-row inset-0 bg-gray-100 md:bg-transparent pt-16 md:pt-0 font-serif text-center md:text-left ${
+          className={`fixed z-10 md:static flex-col md:flex-row inset-0 bg-gray-100 md:bg-transparent pt-16 md:pt-0 font-sans uppercase text-center md:text-left ${
             isOpen === true ? 'flex' : 'hidden md:flex'
           }`}
           id="main-menu"

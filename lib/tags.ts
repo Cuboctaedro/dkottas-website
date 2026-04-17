@@ -7,9 +7,10 @@ export const tags = [
     label: 'Web Development',
     slug: 'web-development',
   },
+
   {
-    label: 'Print Design',
-    slug: 'print-design',
+    label: 'Graphic Design',
+    slug: 'graphic-design',
   },
   {
     label: 'Book Design',

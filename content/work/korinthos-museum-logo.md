@@ -18,6 +18,7 @@ gallery:
 description: Logo design for a museum.
 featuredimage: korinthos-logo.jpg
 tags:
+  - Graphic Design
   - Identity
   - Print Design
 ---

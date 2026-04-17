@@ -1,10 +1,17 @@
-import { Literata } from 'next/font/google'
+import { Inter, Literata, Source_Sans_3, Source_Serif_4 } from 'next/font/google'
 import { Navbar } from '@/components/navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
 import './globals.css'
 
-const serif = Literata({
+const serif = Source_Serif_4({
   variable: '--font-serif',
+  subsets: ['latin'],
+  weight: ['200', '400', '700'],
+  style: ['italic', 'normal'],
+})
+
+const sans = Source_Sans_3({
+  variable: '--font-sans',
   subsets: ['latin'],
   weight: ['200', '400', '700'],
   style: ['italic', 'normal'],
@@ -25,7 +32,7 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
-        className={`${serif.variable} antialiased font-serif text-base text-gray-700 bg-white border-8 border-solid border-gray-200`}
+        className={`${sans.variable} ${serif.variable} antialiased font-sans text-base text-gray-700 bg-white border-8 border-solid border-gray-200`}
       >
         <a className="skip-link" href="#main">
           Skip to content
@@ -45,7 +52,7 @@ export default function RootLayout({
             </div>
             <div className="flex flex-row flex-wrap justify-end">
               <div className="px-3 w-full md:w-1/2 lg:w-1/3 xl:w-1/4 mb-12">
-                <div className="generated">© 2025 Dimitris Kottas</div>
+                <div className="text-right">© 2026 Dimitris Kottas</div>
               </div>
             </div>
           </footer>
