@@ -31,4 +31,3 @@ export const ProjectCard = ({ project, isProjectsPage }: ProjectCardProps) => {
     </article>
   )
 }
-
