@@ -12,6 +12,7 @@ gallery:
 description: Posters and booklet design for an urban studies conference.
 featuredimage: inura-posters.jpg
 tags:
+  - Graphic Design
   - Print Design
 ---
 

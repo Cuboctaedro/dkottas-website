@@ -12,6 +12,7 @@ gallery:
 description: Panels for an exhibition about the petrified forest of Lesvos.
 featuredimage: dasos-panels.jpg
 tags:
+  - Graphic Design
   - Print Design
   - Exhibitions
 ---

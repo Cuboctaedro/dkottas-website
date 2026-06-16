@@ -20,6 +20,7 @@ featuredimage: iccg-poster.jpg
 tags:
   - Web Design
   - Web Development
+  - Graphic Design
   - Print Design
 ---
 

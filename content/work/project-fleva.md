@@ -20,6 +20,7 @@ gallery:
 description: Design for a book of actor portraits.
 featuredimage: project-fleva-poster.jpg
 tags:
+  - Graphic Design
   - Book Design
   - Print Design
 ---
